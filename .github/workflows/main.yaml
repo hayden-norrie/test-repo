@@ -14,5 +14,5 @@ jobs:
           JF_URL: ${{ secrets.JF_URL }}
         run: |
           echo "Deploying to artifactory"
-          curl -L -f -H "Authorization: Bearer $JF_ACCESS_TOKEN" -T "we_love_text_files.txt" "${JF_URL}/hayden-generic-test/we_love_text_files.txt"
+          curl -L -f -H "Authorization: Bearer ${JF_ACCESS_TOKEN}" -T "we_love_text_files.txt" "${JF_URL}/hayden-generic-test/we_love_text_files.txt"
 
