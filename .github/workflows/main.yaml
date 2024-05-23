@@ -13,5 +13,5 @@ jobs:
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}  # Use secrets to store sensitive data
           JF_URL: ${{ secrets.JF_URL }}
         run: |
-          echo "Deploying to artifactory" && curl -v -L -f -H "Authorization: Bearer ${{ secrets.JF_ACCESS_TOKEN }}" -T "we_love_text_files.txt" "${JF_URL}/hayden-generic-test/"
+          echo "Deploying to artifactory" && curl -L -H "Authorization: Bearer ${{ secrets.JF_ACCESS_TOKEN }}" -T "we_love_text_files.txt" "${JF_URL}/hayden-generic-test/text.txt"
 
