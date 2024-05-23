@@ -1,4 +1,4 @@
-kname: "JFrog CLI Example"
+name: "JFrog CLI Example"
 on: push
 
 jobs:
