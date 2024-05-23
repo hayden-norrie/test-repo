@@ -1,2 +1,3 @@
 Lets add some text!
 And make this a diff file!
+Another line :)
