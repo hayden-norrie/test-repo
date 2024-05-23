@@ -1,4 +1,4 @@
-name: "Jfrog CLI Example"
+kname: "JFrog CLI Example"
 on: push
 
 jobs:
@@ -7,10 +7,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Deploy to artifactory
         env:
-          JF_ACCESS_TOKEN: ${{ env.JF_ACCESS_TOKEN }}
-	  JF_URL: ${{ env.JF_URL }}
-	run: |
-	  echo "Deploying to artifactory"
-          curl -L -H "Authorization: Bearer $JF_ACCESS_TOKEN" -T we_love_text_files.txt ${JF_URL}/hayden-generic-test/we_love_text_files_art.txt"	
+          JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}  # Use secrets to store sensitive data
+          JF_URL: ${{ secrets.JF_URL }}
+        run: |
+          echo "Deploying to artifactory"
+          curl -L -f -H "Authorization: Bearer $JF_ACCESS_TOKEN" -T "we_love_text_files.txt" "${JF_URL}/hayden-generic-test/we_love_text_files.txt"
+
